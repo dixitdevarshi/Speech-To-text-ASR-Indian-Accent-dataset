@@ -6,14 +6,14 @@ This repository contains a script to evaluate Automatic Speech Recognition (ASR)
 
 bash
 Copy code
-git clone https://github.com/yourusername/speech-to-text-word2vec.git
-cd speech-to-text-word2vec
+git clone https://github.com/dixitdevarshi/Speech-To-text-ASR-Indian-Accent-dataset.git<br>
+cd Speech-To-text-ASR-Indian-Accent-dataset
 
 **Create and activate a virtual environment (optional but recommended):**
 
 bash
 Copy code
-python3 -m venv venv
+python3 -m venv venv<br>
 source venv/bin/activate  # On Windows use venv\Scripts\activate
 
 
@@ -23,15 +23,21 @@ bash
 Copy code
 pip install -r requirements.txt
 
+**Result:**
+
+Average CER: 0.1362
+
 **Example Output:**
 
 
-File: 000ad655ec2e8d0593f6cd04348d6a5e7726a7d0d6cd397543c8a9b3.wav
-Reference: THE UHH ASSIGNMENT STATEMENT SO NOW LET'S EXPAND THE EXPRESSIONS SO OBSERVE THAT THE
-Transcription: THE  ASSIGNMENT OR STATEMENT SO NOW LET'S EXPAND THE EXPRESSIONS SO OBSERVE THAT THE
-CER: 0.0714
----------
-File: 000ad6c22f20b266297a26479bfde266acaef84e3accec59b5ac9330.wav
-Reference: THEN FINALLY YOU HAVE THE MANY TO MANY RELATIONSHIP IN THE
-Transcription: THEN FINALLY YOU HAVE THE MANY TOO MANY RELATIONSHIP IN THE
+File: 000ad655ec2e8d0593f6cd04348d6a5e7726a7d0d6cd397543c8a9b3.wav<br>
+Reference: THE UHH ASSIGNMENT STATEMENT SO NOW LET'S EXPAND THE EXPRESSIONS SO OBSERVE THAT THE<br>
+Transcription: THE  ASSIGNMENT OR STATEMENT SO NOW LET'S EXPAND THE EXPRESSIONS SO OBSERVE THAT THE<br>
+CER: 0.0714<br>
+
+File: 000ad6c22f20b266297a26479bfde266acaef84e3accec59b5ac9330.wav<br>
+Reference: THEN FINALLY YOU HAVE THE MANY TO MANY RELATIONSHIP IN THE<br>
+Transcription: THEN FINALLY YOU HAVE THE MANY TOO MANY RELATIONSHIP IN THE<br>
 CER: 0.0172
+
+
