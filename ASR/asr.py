@@ -8,7 +8,7 @@ def load_audio(file_path):
     waveform, sample_rate = torchaudio.load(file_path)
     if sample_rate != 16000:
         waveform = torchaudio.transforms.Resample(orig_freq=sample_rate, new_freq=16000)(waveform)
-    waveform = torchaudio.transforms.Vol(1.0, gain_type='amplitude')(waveform)  # Normalize audio
+    waveform = torchaudio.transforms.Vol(1.0, gain_type='amplitude')(waveform) 
     return waveform.squeeze().numpy()
 
 def read_text(file_path):
@@ -30,22 +30,22 @@ def evaluate_asr_and_calculate_cer(audio_dir, text_dir, model_name='facebook/wav
             text_path = os.path.join(text_dir, text_file)
 
             if os.path.exists(text_path):
-                # Load and preprocess the audio
+                
                 input_audio = load_audio(audio_path)
                 input_values = processor(input_audio, sampling_rate=16000, return_tensors="pt").input_values
 
-                # Perform ASR
+                
                 with torch.no_grad():
                     logits = model(input_values).logits
                 predicted_ids = torch.argmax(logits, dim=-1)
                 transcription = processor.batch_decode(predicted_ids)[0]
 
-                # Load reference transcription
+                
                 reference = read_text(text_path)
 
-                # Check if reference and transcription are not empty
+                
                 if reference and transcription:
-                    # Compute CER
+                    
                     cer = jiwer.cer(reference, transcription)
                     cer_scores.append(cer)
                     total_samples += 1
@@ -66,6 +66,6 @@ def evaluate_asr_and_calculate_cer(audio_dir, text_dir, model_name='facebook/wav
         print("No valid samples found to compute CER.")
 
 
-audio_directory = '/content/drive/MyDrive/wav'
-text_directory = '/content/drive/MyDrive/corrected_txt'
+audio_directory = 'Dataset/wav'
+text_directory = 'Dataset/corrected_txt'
 evaluate_asr_and_calculate_cer(audio_directory, text_directory)
