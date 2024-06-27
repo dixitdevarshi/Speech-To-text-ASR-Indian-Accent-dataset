@@ -4,24 +4,24 @@ This repository contains a script to evaluate Automatic Speech Recognition (ASR)
 
 **Clone the repository:**
 
-bash
-Copy code
 git clone https://github.com/dixitdevarshi/Speech-To-text-ASR-Indian-Accent-dataset.git<br>
 cd Speech-To-text-ASR-Indian-Accent-dataset
 
 **Create and activate a virtual environment (optional but recommended):**
 
-bash
-Copy code
+
 python3 -m venv venv<br>
-source venv/bin/activate  # On Windows use venv\Scripts\activate
+venv\Scripts\activate  
 
 
 **Install the required dependencies:**
 
-bash
-Copy code
 pip install -r requirements.txt
+
+**Dataset:**
+
+nptel-pure-set<br>
+https://github.com/AI4Bharat/NPTEL2020-Indian-English-Speech-Dataset/releases/download/v0.1/nptel-pure-set.tar.gz
 
 **Result:**
 
